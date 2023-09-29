@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Advice generator app</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Outfit:wght@400;700&family=Rubik:wght@300;400;500&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Manrope', sans-serif;
+      font-family: 'Outfit', sans-serif;
+      font-family: 'Rubik', sans-serif;
+    }
+    .neongreen{
+      color: hsl(150, 100%, 66%);
+    }
+    html{
+      height: 100%;
+    }
+    body{
+      background-color: hsl(218, 23%, 16%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .white{
+      color: hsl(0, 0%, 72%);
+    }
+    .font-bold{
+      font-weight: 800;
+    }
+    .main{
+      text-align: center;
+      background-color: hsl(217, 19%, 24%);
+      padding: 20px;
+      box-shadow: 0 0 1px 15px hsl(217, 19%, 24%);
+      width: 30%;
+      border-radius: 10px;
+    }
+    .w-70{
+      width: 70%;
+    }
+    .m-auto{
+      margin:auto;
+    }
+    p{
+      margin: 20px 0;
+    }
+    .f-5{
+      font-size: 1.2rem;
+    }
+    .btn{
+      padding: 12px 12px 10px 12px;
+      background:  hsl(150, 100%, 66%);
+      border: transparent;
+      border-radius: 24px;
+      position: relative;
+      bottom: -50px;
+    }
+    .btn:hover{
+      background: hsl(150, 80%, 35%);
+      border:transparent;
+      border-color: hsl(150, 80%, 35%);
+    }
+
+    @media only screen and (max-width:1400px) {
+      .main{
+        width: 50%;
+      }
+    }
+
+    @media only screen and (max-width:800px) {
+      .main{
+        width: 70%;
+      }
+    }
+
+    @media only screen and (max-width:600px) {
+      .main{
+        width: 80%;
+      }
+    }
+    .mb-0{
+      margin-bottom: -12px;
+    }
+    .mb-4{
+      margin-top: 24px;
+    }
+    @media only screen and (max-width:320px) {
+      .main{
+        /* width: auto; */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <p class="neongreen">Advice #117</p>
+    <p class="white font-bold w-70 m-auto f-5">"it is easy to sit up and take notice, what's difficult is getting  up and taking action.</p>
+    <p class="mb-0 mb-4 m-auto divider"><svg width="444" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z"/><g transform="translate(212)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg></p>
+    <button class="btn"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#202733"/></svg></button>
+  </div>
+  </div>
+</body>
+</html>
+<script>
+  const handleResize = () => {
+    const dividerElements = document.getElementsByClassName('divider');
+    if(window.innerWidth <= 550){
+      const svgMarkup = `
+      <svg width="295" height="16" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+          <path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z"/>
+            <g transform="translate(138)" fill="#CEE3E9">
+            <rect width="6" height="16" rx="3"/>
+            <rect x="14" width="6" height="16" rx="3"/>
+          </g>
+        </g>
+      </svg>
+      `;
+      for (const dividerElement of dividerElements) {
+        dividerElement.innerHTML = svgMarkup;
+      }
+    }
+    else{
+      const svgMarkup = `
+      <svg width="444" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z"/><g transform="translate(212)" fill="#CEE3E9"><rect width="6" height="16" rx="3"/><rect x="14" width="6" height="16" rx="3"/></g></g></svg>
+      `;
+      for (const dividerElement of dividerElements) {
+        dividerElement.innerHTML = svgMarkup;
+      }
+    }
+  }
+  window.addEventListener("resize", handleResize);
+</script>
